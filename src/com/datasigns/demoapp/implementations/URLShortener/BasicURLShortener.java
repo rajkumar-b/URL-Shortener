@@ -8,6 +8,7 @@ import com.datasigns.demoapp.interfaces.StringHasher;
 import com.datasigns.demoapp.interfaces.URLShortener;
 import com.datasigns.demoapp.interfaces.URLStorer;
 
+// Disadvantage: Same hash for same url. Possibility for duplicate hash.
 @Component
 public class BasicURLShortener implements URLShortener {
 
