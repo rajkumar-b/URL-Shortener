@@ -1,7 +1,10 @@
 package com.datasigns.demoapp.implementations.StringHasher;
 
+import org.springframework.stereotype.Component;
+
 import com.datasigns.demoapp.interfaces.StringHasher;
 
+@Component
 public class BasicStringHasher implements StringHasher {
 
 	@Override

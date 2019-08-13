@@ -1,11 +1,14 @@
 package com.datasigns.demoapp.implementations.URLShortener;
 
+import org.springframework.stereotype.Component;
+
 import com.datasigns.demoapp.implementations.StringHasher.BasicStringHasher;
 import com.datasigns.demoapp.implementations.URLStorer.HashMapURLStorage;
 import com.datasigns.demoapp.interfaces.StringHasher;
 import com.datasigns.demoapp.interfaces.URLShortener;
 import com.datasigns.demoapp.interfaces.URLStorer;
 
+@Component
 public class BasicURLShortener implements URLShortener {
 
 	private URLStorer urlStorage;
