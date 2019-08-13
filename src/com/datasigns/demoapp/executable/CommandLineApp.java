@@ -1,4 +1,4 @@
-package com.datasigns.demoapp;
+package com.datasigns.demoapp.executable;
 
 import java.util.Scanner;
 
