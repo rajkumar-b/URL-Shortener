@@ -1,14 +1,12 @@
 package com.datasigns.demoapp;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class BasicURLShortener implements URLShortener {
 
-	private Map<String, String> urlStorage;
+	private URLStorer urlStorage;
 
 	public BasicURLShortener() {
-		urlStorage = new HashMap<>();
+		this.urlStorage = new HashMapURLStorage();
 	}
 
 	@Override
@@ -23,12 +21,12 @@ public class BasicURLShortener implements URLShortener {
 
 	private String shortenMyUrl(String realUrl) {
 		String tinyUrl = getHash(realUrl);
-		urlStorage.put(tinyUrl, realUrl);
+		urlStorage.storeTinyUrlMapping(realUrl, tinyUrl);
 		return tinyUrl;
 	}
 
 	private String returnMyUrl(String tinyUrl) {
-		String op = urlStorage.get(tinyUrl);
+		String op = urlStorage.retrieveOriginalUrlFromMapping(tinyUrl);
 		return op==null? "URL not in List": op;
 	}
 	
