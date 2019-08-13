@@ -1,4 +1,4 @@
-package com.datasigns.demoapp;
+package com.datasigns.demoapp.interfaces;
 
 public interface URLShortener {
 	public String getShortenedURL(String s);

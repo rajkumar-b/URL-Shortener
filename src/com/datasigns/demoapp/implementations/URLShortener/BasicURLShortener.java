@@ -1,5 +1,10 @@
-package com.datasigns.demoapp;
+package com.datasigns.demoapp.implementations.URLShortener;
 
+import com.datasigns.demoapp.implementations.StringHasher.BasicStringHasher;
+import com.datasigns.demoapp.implementations.URLStorer.HashMapURLStorage;
+import com.datasigns.demoapp.interfaces.StringHasher;
+import com.datasigns.demoapp.interfaces.URLShortener;
+import com.datasigns.demoapp.interfaces.URLStorer;
 
 public class BasicURLShortener implements URLShortener {
 

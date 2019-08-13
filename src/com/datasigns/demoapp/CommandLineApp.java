@@ -2,8 +2,13 @@ package com.datasigns.demoapp;
 
 import java.util.Scanner;
 
-public class CommandLineApp {
+import com.datasigns.demoapp.implementations.URLShortener.BasicURLShortener;
+import com.datasigns.demoapp.interfaces.URLShortener;
 
+public class CommandLineApp {
+	
+	private static URLShortener urlShortener = new BasicURLShortener();
+	
 	public static void main(String[] args) {
 		getInputAndProcess();
 	}
@@ -12,7 +17,6 @@ public class CommandLineApp {
 		System.out.println("Enter the Command [SHRT/EXPD <url>] or [EXIT]:\n");
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();
-		URLShortener urlShortener = new BasicURLShortener();
 		
 		inputLoop: while(true) {
 			String[] inp = s.trim().split("\\s+");

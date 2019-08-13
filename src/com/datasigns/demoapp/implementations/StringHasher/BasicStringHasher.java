@@ -1,4 +1,6 @@
-package com.datasigns.demoapp;
+package com.datasigns.demoapp.implementations.StringHasher;
+
+import com.datasigns.demoapp.interfaces.StringHasher;
 
 public class BasicStringHasher implements StringHasher {
 

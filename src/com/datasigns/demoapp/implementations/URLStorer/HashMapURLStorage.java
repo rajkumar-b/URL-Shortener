@@ -1,7 +1,9 @@
-package com.datasigns.demoapp;
+package com.datasigns.demoapp.implementations.URLStorer;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import com.datasigns.demoapp.interfaces.URLStorer;
 
 public class HashMapURLStorage implements URLStorer {
 
