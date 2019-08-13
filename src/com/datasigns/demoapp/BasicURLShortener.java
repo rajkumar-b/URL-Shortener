@@ -4,9 +4,11 @@ package com.datasigns.demoapp;
 public class BasicURLShortener implements URLShortener {
 
 	private URLStorer urlStorage;
+	private StringHasher stringHasher;
 
 	public BasicURLShortener() {
 		this.urlStorage = new HashMapURLStorage();
+		this.stringHasher = new BasicStringHasher();
 	}
 
 	@Override
@@ -20,7 +22,7 @@ public class BasicURLShortener implements URLShortener {
 	}
 
 	private String shortenMyUrl(String realUrl) {
-		String tinyUrl = getHash(realUrl);
+		String tinyUrl = stringHasher.getHash(realUrl);
 		urlStorage.storeTinyUrlMapping(realUrl, tinyUrl);
 		return tinyUrl;
 	}
@@ -28,11 +30,6 @@ public class BasicURLShortener implements URLShortener {
 	private String returnMyUrl(String tinyUrl) {
 		String op = urlStorage.retrieveOriginalUrlFromMapping(tinyUrl);
 		return op==null? "URL not in List": op;
-	}
-	
-	public String getHash(String stringToHash) {
-		int hash = stringToHash.hashCode();
-		return Integer.toString(hash,36);
 	}
 
 }
